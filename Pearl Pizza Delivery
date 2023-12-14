@@ -15,20 +15,20 @@ root.title("Pearl Pizza Delivery")#title of the window
 #opening 1st image file
 image1 = Image.open("C:\\Users\\Olamu\\OneDrive\\Pictures\\Pepperoni.jpg")
 #resizing the image
-image1 = image1.resize((150, 150), Image.LANCZOS)
+image1 = image1.resize((160, 160), Image.LANCZOS)
 test = ImageTk.PhotoImage(image1)
 
 
 #opening 2nd image file
 image2 = Image.open("C:\\Users\\Olamu\\OneDrive\\Pictures\\chickenpizza.jpg")
 #resizing the image
-image2 = image2.resize((150, 150), Image.LANCZOS)
+image2 = image2.resize((160, 160), Image.LANCZOS)
 test2 = ImageTk.PhotoImage(image2)
 
 #opening 3rd image file
 image3 = Image.open("C:\\Users\\Olamu\\OneDrive\\Pictures\\pizzasugar.jpg")
 #resizing the image
-image3 = image3.resize((150, 150), Image.LANCZOS)
+image3 = image3.resize((160, 160), Image.LANCZOS)
 test3 = ImageTk.PhotoImage(image3)
 
 #setting 1st image in label l3
@@ -39,26 +39,26 @@ l4=tk.Label(root,image=test2)
 l4.place(x=350,y=10)#position the label
 
 #displaying a menu for pizza using a label with font and size of text
-l5=tk.Label(root,text="Pizza: Beef pizza, Chicken pizza, Pork pizza",font=("Arial", 15))
+l5=tk.Label(root,text="Pizza: Beef pizza, Chicken pizza, Pork pizza, Pepperoni Pizza",font=("Times New Roman", 16))
 l5.place(x=50,y=200)
 #displaying a menu for hot dog
-l6=tk.Label(root,text="Hot dog: Beef hot dog, Pork hot dog, Turkey hot dog",font=("Arial", 15))
+l6=tk.Label(root,text="Hot dog: Beef hot dog, Chicken hot dog, Pork hot dog, Turkey hot dog",font=("Times New Roman", 16))
 l6.place(x=50,y=230)
-l1=tk.Label(root,text="Enter pizza names(using comma)",font=("Arial", 15))
+l1=tk.Label(root,text="Enter pizza names(comma)",font=("Times New Roman", 16))
 
 l1.place(x=50,y=280)
 
 #entry box with font and size
 
-t1=tk.Entry(root,font=("Arial", 15))
+t1=tk.Entry(root,font=("Times New Roman", 16))
 
 t1.place(x=380,y=280)#position of entry box
 
-l2=tk.Label(root,text="Enter hot dog names(using comma)",font=("Arial", 15))
+l2=tk.Label(root,text="Enter hot dog names(comma)",font=("Times New Roman", 16))
 
 l2.place(x=50,y=310)
 
-t2=tk.Entry(root,font=("Arial", 15))
+t2=tk.Entry(root,font=("Times New Roman", 16))
 
 t2.place(x=380,y=310)
 
@@ -74,15 +74,15 @@ def calc():
     len1=len(pizza)#finding the length(number of items or pizza)
     len2=len(hotdog)#finding the length(number of items or hot dogs)
 
-    priceOfPizza=len1*8.99#multiplying number of pizza with price of 1
-    priceOfHotdog=len2*1.99#multiplying number of hot dogs with price of 1
+    priceOfPizza=len1*12.99#multiplying number of pizza with price of 1
+    priceOfHotdog=len2*3.99#multiplying number of hot dogs with price of 1
 
     #displaying in a message box
     s='price of pizza : {} price of hot dog : {}'.format(priceOfPizza,priceOfHotdog)
     messagebox.showinfo('price of pizza and hot dog',s)
 
     #returning price of pizza ,hot dog ,list of pizza names and hot dog names
-    return priceOfPizza,priceOfHotdog,pizza,hotdog
+    return priceofPizza,priceOfHotdog,pizza,hotdog
 
 def total():
     #collecting price of pizzas, hot dogs and names of pizza and hot dogs
@@ -97,30 +97,30 @@ def total():
     child_w.grid_location(x=300,y=300)#location of child window
     child_w.title("total price") #title of the window
     #creating label widgets
-    label_child= Label(child_w, text= s, font=('Helvetica 15'))
+    label_child= Label(child_w, text= s, font=('Calibri 16'))
     label_child.place(x=20,y=50)#positioning the label
 
-    l2= Label(child_w, text="you have ordered", font=('Helvetica 15'))
+    l2= Label(child_w, text="you have ordered", font=('Calibri 16'))
     l2.place(x=20,y=100)#positioning the label
 
     s2=' '.join(pizza)+" "+' '.join(hotdog)
-    l3= Label(child_w, text=s2, font=('Helvetica 15'))
+    l3= Label(child_w, text=s2, font=('Calibri 16'))
     l3.place(x=20,y=150)#positioning the label
 
 #creating the buttons
 
 #click this button to calculate price of pizza and
 # hot dog separately
-b1 = tk.Button(root,text="calculate price of pizza and hot dog",command=calc,font=("Arial", 15))
+b1 = tk.Button(root,text="calculate price of pizza and hot dog",command=calc,font=("Times New Roman", 16))
 b1.place(x=100,y=380)
 
 #click this button to calculate total price of pizza and
 # hot dog
-b2 = tk.Button(root,text="calculate total price",command=total,font=("Arial", 15))
+b2 = tk.Button(root,text="calculate total price",command=total,font=("Times New Roman", 16))
 b2.place(x=100,y=420)
 
 #click this button to exit from the program
-b3 = tk.Button(root,text="exit",command=root.destroy,font=("Arial", 15))
+b3 = tk.Button(root,text="exit",command=root.destroy,font=("Times New Roman", 16))
 b3.place(x=100,y=460)
 
 #starting the main window
